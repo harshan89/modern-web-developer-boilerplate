@@ -8,7 +8,7 @@
     "build": "webpack",
     "start:dev": "webpack-dev-server"
   },
-  "keywords": [],
+  "keywords": ['webpack','html', 'scss', 'gsap', 'es6', 'front-end'],
   "author": "",
   "license": "ISC",
   "devDependencies": {
