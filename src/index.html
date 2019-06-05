@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mobile nice</title>
+    <title>Boilerplate</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -24,11 +24,11 @@
         <section class="hero">
             <div class="inner">
                 <div class="clipper">
-                    <h1>Go Musician</h1>
+                    <h1>Boiler plate for Web</h1>
                 </div>
 
                 <div class="anim-panel">
-                    <p>Start touring all over the place and melting the hearts </p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
                     <a href="#" class="read-btn primary">Get Famous</a>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <h2>Subscribe</h2>
                 </div>
                 <div class="anim-panel">
-                    <p>Get the latest update about this web site and stuff</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing </p>
                     <input type="text" name="email" placeholder="Email Address">
                     <button class="cta">Subscribe</button>
                 </div>
@@ -58,5 +58,32 @@
         </section>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+            window.addEventListener("load", function(e) {
+                document.body.style.display = 'block';
+                var t1 = new TimelineMax();
+                t1.staggerFrom('section', 2, {
+                    opacity: 0,
+                    scale: .5,
+                    ease: Power2.easeInOut
+                }, 0.2);
+
+                t1.staggerFrom('h1, h2', .5, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut
+                }, 0.2, "-=2");
+                
+                t1.staggerFrom('.anim-panel', 1, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut
+                }, 0.2, "-=1.5");
+            })
+        })
+    </script>
 </body>
 </html>
