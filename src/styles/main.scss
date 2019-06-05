@@ -6,7 +6,7 @@ body, html {
 body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
-    // display: none;
+    display: none;
 }
 
 header {
@@ -148,7 +148,7 @@ header {
     }
     .wrapper {
         grid-template-columns: 70% auto;
-        grid-template-rows: 60% auto;
+        grid-template-rows: 50% auto;
         grid-template-areas: 
             "hero f"
             "hero s";
@@ -156,5 +156,11 @@ header {
     }
     section.hero {
         grid-area: hero;
+    }
+}
+
+@media only screen and (min-width: 1800px){
+    html {
+        font-size: 21px;
     }
 }
