@@ -9,7 +9,17 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "babel-loader"
+                        loader: "babel-loader",
+                        options: {
+                            presets: [
+                                '@babel/preset-env',
+                                {
+                                plugins: [
+                                    '@babel/plugin-proposal-class-properties'
+                                ]
+                                }
+                            ]
+                        }
                     }
                 ]
             },
@@ -23,13 +33,13 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(ttf|eot|svg|woff2|woff|png|jpg|jpeg|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [
                     "file-loader"
                 ]
             },
             {
-                test: /\.scss$/,
+                test: /\.scss|.css$/,
                 use: ["style-loader", "css-loader", "sass-loader"]
             }
         ]

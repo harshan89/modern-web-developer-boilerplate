@@ -1,4 +1,9 @@
-import { bro } from './bro';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import './styles/main.scss'
 
-console.log(bro('Dude'));
+
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
