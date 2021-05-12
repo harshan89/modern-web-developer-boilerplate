@@ -16,7 +16,8 @@ header {
     display: flex;
     justify-content: space-between;
     width: calc(100% - 2em);
-    background-color: white;
+    background: #231F20;
+    grid-area: header;
 
     a {
         text-decoration: none;
@@ -82,9 +83,10 @@ header {
     }
 
     section.hero {
+        grid-area: hero;
         padding-top: 8em;
-        background: url('../images/hero.jpg');
-        background-size: cover;
+        //background: url('../images/hero.jpg');
+        //background-size: cover;
 
         p {
             width: 70%;
@@ -99,6 +101,7 @@ header {
     }
 
     section.sidebar {
+        grid-area: sidebar;
         background-color: yellow;
 
         .read-btn {
@@ -109,6 +112,7 @@ header {
     }
 
     section.subscribe {
+        grid-area: subscribe;
 
         input {
             width: calc(100% - 2em);
@@ -136,6 +140,46 @@ header {
     }
 }
 
+footer {
+    grid-area: footer;
+    background: #231F20;
+    padding: 1em 0 4em 0;
+    color: #fff;
+    font-size: .8rem;
+
+    .menu {
+        padding: 2rem;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style: none;
+        border-bottom: 1px solid #333333;
+    }
+
+    .text-content {
+        color: #727272;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.6em;
+
+        a {
+            text-decoration: none;
+            color: #727272;
+
+            &:hover {
+                color: #fff;
+                transition: all 0.5s;
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 768px) {
     html {
         font-size: 18px;
@@ -149,10 +193,11 @@ header {
     .wrapper {
         grid-template-columns: 70% auto;
         grid-template-rows: 50% auto;
-        grid-template-areas: 
-            "hero f"
-            "hero s";
-        height: 100vh;
+        grid-template-areas:
+            "header header"
+            "hero sidebar"
+            "hero s"
+            "footer footer";
     }
     section.hero {
         grid-area: hero;
