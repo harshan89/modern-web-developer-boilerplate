@@ -9,15 +9,19 @@ body {
     display: none;
 }
 
+.container {
+  display: grid;
+  background: #f6f6f6;
+}
+
 header {
-    position: absolute;
-    padding: 1em;
-    z-index: 20;
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 2em);
-    background: #231F20;
-    grid-area: header;
+  grid-area: header;
+  padding: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2em);
+  background: #231F20;
 
     a {
         text-decoration: none;
@@ -46,6 +50,7 @@ header {
 .wrapper {
     display: grid;
     grid-template-columns: auto;
+    grid-area: wrapper;
 
     section {
         padding: 3em;
@@ -102,7 +107,7 @@ header {
 
     section.sidebar {
         grid-area: sidebar;
-        background-color: yellow;
+        background-color: #eeeeee;
 
         .read-btn {
             margin-top: 2em;
@@ -190,14 +195,19 @@ footer {
     header {
         background: none;
     }
+    .container {
+      grid-template-rows: auto auto;
+      grid-template-areas:
+              "header"
+              "wrapper"
+              "footer";
+    }
     .wrapper {
         grid-template-columns: 70% auto;
         grid-template-rows: 50% auto;
         grid-template-areas:
-            "header header"
             "hero sidebar"
-            "hero s"
-            "footer footer";
+            "hero subscribe"
     }
     section.hero {
         grid-area: hero;
